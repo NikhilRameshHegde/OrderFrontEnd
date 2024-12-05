@@ -1,13 +1,20 @@
 <div class="book-list">
-    <h2>Books</h2>
-    <div *ngIf="books.length === 0">No books available.</div>
-    <ul>
-      <li *ngFor="let book of books">
-        <div>
-          <strong>{{ book.title }}</strong><br />
-          <small>{{ book.author }}</small>
-        </div>
-        <button (click)="deleteBook(book.id)">Delete</button>
-      </li>
-    </ul>
-  </div>  
+  <h2>Books</h2>
+  
+  <!-- Check if there are no books available -->
+  <div *ngIf="books.length === 0">No books available.</div>
+  
+  <!-- Display books in a single list -->
+  <ul>
+    <li *ngFor="let book of books">
+      <div>
+        <strong>{{ book.title }}</strong><br />
+        <small>{{ book.author }}</small>
+      </div>
+      
+      <!-- Edit and Delete buttons -->
+      <a [routerLink]="['/books/update', book.id]">Edit</a> <!-- Edit link to update book -->
+      <button (click)="deleteBook(book.id)">Delete</button>  <!-- Delete button -->
+    </li>
+  </ul>
+</div>

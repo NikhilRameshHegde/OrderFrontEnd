@@ -1,1 +1,43 @@
-<p>update-book works!</p>
+<div class="update-book-container">
+    <h2>Update Book</h2>
+    <form (ngSubmit)="updateBook()">
+      <div class="form-group">
+        <label for="bookTitle">Title</label>
+        <input
+          type="text"
+          id="bookTitle"
+          [(ngModel)]="bookTitle"
+          name="bookTitle"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="bookAuthor">Author</label>
+        <input
+          type="text"
+          id="bookAuthor"
+          [(ngModel)]="bookAuthor"
+          name="bookAuthor"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="bookPrice">Price</label>
+        <input
+          type="number"
+          id="bookPrice"
+          [(ngModel)]="bookPrice"
+          name="bookPrice"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Update button -->
+      <button type="submit" class="btn btn-primary" [disabled]="!bookId">Update Book</button>
+    </form>
+  </div>

@@ -27,8 +27,9 @@ export class BookService {
   }
 
   // Update a book
-  updateBook(bookId: number, book: any): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${bookId}`, book);
+  updateBook(bookId: number, updatedBook: any): Observable<any> {
+    const url = `http://localhost:8081/books/update/${bookId}`;
+    return this.http.put(url, updatedBook, { headers: { 'Content-Type': 'application/json' } });
   }
 
   // Delete a book

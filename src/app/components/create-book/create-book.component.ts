@@ -13,7 +13,7 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./create-book.component.scss'],
 })
 export class CreateBookComponent {
-  book = { title: '', author: '', price: 0 };
+  book = { title: '', author: '', price: 0 , stock: 0};
 
   constructor(private bookService: BookService, private router: Router) {}
 
