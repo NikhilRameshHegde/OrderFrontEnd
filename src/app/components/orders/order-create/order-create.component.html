@@ -1,0 +1,16 @@
+<div class="order-create-container">
+  <h2>Create Order</h2>
+  <form (ngSubmit)="createOrder()" class="create-form">
+    <div class="form-group">
+      <label for="bookIds">Book IDs (comma-separated):</label>
+      <input
+        type="text"
+        id="bookIds"
+        [(ngModel)]="bookIds"
+        name="bookIds"
+        required
+      />
+    </div>
+    <button type="submit">Create Order</button>
+  </form>
+</div>

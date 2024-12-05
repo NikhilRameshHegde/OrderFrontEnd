@@ -1,0 +1,54 @@
+<div class="order-list-container">
+  <h2>Order List</h2>
+
+  <!-- Search Order by ID -->
+  <div class="search-section">
+    <label for="orderId">Search Order by ID:</label>
+    <input type="number" id="orderId" [(ngModel)]="searchOrderId" />
+    <button (click)="getOrderById()">Search</button>
+  </div>
+
+  <!-- Display searched order -->
+  <div *ngIf="searchedOrder" class="searched-order">
+    <h3>Searched Order:</h3>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Book IDs</th>
+          <th>Total Price</th>
+          <th>Created Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ searchedOrder.id }}</td>
+          <td>{{ searchedOrder.bookIds.join(', ') }}</td>
+          <td>{{ searchedOrder.totalPrice }}</td>
+          <td>{{ searchedOrder.createdDate | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- All orders -->
+  <h3>All Orders</h3>
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Book IDs</th>
+        <th>Total Price</th>
+        <th>Created Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <td>{{ order.id }}</td>
+        <td>{{ order.bookIds.join(', ') }}</td>
+        <td>{{ order.totalPrice }}</td>
+        <td>{{ order.createdDate | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
