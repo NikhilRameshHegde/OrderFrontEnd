@@ -1,0 +1,13 @@
+<div class="book-list">
+    <h2>Books</h2>
+    <div *ngIf="books.length === 0">No books available.</div>
+    <ul>
+      <li *ngFor="let book of books">
+        <div>
+          <strong>{{ book.title }}</strong><br />
+          <small>{{ book.author }}</small>
+        </div>
+        <button (click)="deleteBook(book.id)">Delete</button>
+      </li>
+    </ul>
+  </div>  
